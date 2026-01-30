@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakPeak.com</title>
+    <link rel="icon" href="assets/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="e-commerce.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+        defer></script>
+    <script src="e-commerce.js" defer></script>
+    <script src="theme-toggle.js" defer></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100" data-bs-theme="light">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+                    <img src="assets/logo.png" alt="Logo Sneaker Store" class="rounded-circle">
+                    <span class="fw-bold text-uppercase">SneakPeak</span>
+                </a>
+                <div class="ms-auto">
+                    <button class="btn btn-outline-primary position-relative d-inline-flex align-items-center"
+                        type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
+                        aria-controls="cartOffcanvas">
+                        <i class="bi bi-bag"></i> Carrello
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="flex-grow-1">
+        <div class="container py-4">
+            <div class="d-flex flex-column flex-md-row align-items-md-center gap-3 mb-4">
+                <h1 class="mb-0 text-md-start flex-grow-1">E-commerce</h1>
+                <form class="d-flex flex-shrink-0" role="search" id="searchForm">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        id="searchInput" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="alert alert-info d-flex justify-content-between align-items-center flex-column flex-md-row gap-2"
+                role="alert">
+                <span><strong>Sei il proprietario?</strong> Vai nel backoffice per gestire i prodotti.</span>
+                <a class="btn btn-sm btn-outline-primary" href="backOffice/backOffice.html">Vai al backoffice</a>
+            </div>
+            <div id="statusMessage" class="alert d-none" role="alert"></div>
+            <div id="loadingSpinner" class="text-center my-4 d-none">
+                <div class="spinner-border" role="status" aria-hidden="true"></div>
+            </div>
+            <div class="row g-4" id="productsGrid"></div>
+        </div>
+    </main>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="cartOffcanvasLabel">Carrello</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <ul class="list-group mb-3" id="cartItems"></ul>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="fw-bold">Totale:</span>
+                <span class="fw-bold">€ <span id="cartTotal">0</span></span>
+            </div>
+            <button class="btn btn-outline-danger" id="clearCart">Svuota carrello</button>
+        </div>
+    </div>
+    <footer>
+        <div class="bg-body-tertiary border-top">
+            <div class="container py-4">
+                <div class="row gy-3 align-items-center">
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="assets/logo.png" alt="Logo Sneaker Store" class="rounded-circle">
+                            <span class="fw-bold text-uppercase">SneakPeak</span>
+                        </div>
+                        <p class="text-muted small mt-2 mb-0">Fake e-commerce project for training purposes.</p>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex gap-3 justify-content-md-end">
+                        <a class="text-decoration-none text-muted" href="e-commerce.html">Shop</a>
+                        <a class="text-decoration-none text-muted" href="backOffice/backOffice.html">Backoffice</a>
+                    </div>
+                </div>
+                <div class="text-muted small mt-3">© 2026 SneakPeak</div>
+            </div>
+        </div>
+    </footer>
+    <button id="themeToggle" type="button"
+        class="btn btn-dark position-fixed bottom-0 end-0 m-3 d-inline-flex align-items-center justify-content-center rounded-circle shadow"
+        aria-label="Switch to dark mode">
+        <i class="bi bi-sun-fill"></i>
+    </button>
+</body>
+
+</html>

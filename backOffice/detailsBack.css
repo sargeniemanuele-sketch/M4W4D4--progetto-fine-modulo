@@ -1,0 +1,17 @@
+.navbar .navbar-brand img.rounded-circle {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+footer img.rounded-circle {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+button.btn.position-fixed.bottom-0.end-0.rounded-circle {
+  width: 48px;
+  height: 48px;
+  z-index: 1050;
+}

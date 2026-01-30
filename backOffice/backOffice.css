@@ -1,0 +1,42 @@
+.table-responsive {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.table-responsive thead th {
+  background: var(--bs-tertiary-bg);
+  font-weight: 600;
+}
+
+.table-responsive td,
+.table-responsive th {
+  padding: 1rem 1.25rem;
+}
+
+.table-responsive thead th:first-child {
+  border-top-left-radius: 16px;
+}
+
+.table-responsive thead th:last-child {
+  border-top-right-radius: 16px;
+}
+
+.navbar-brand img.rounded-circle {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+footer img.rounded-circle {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+button.btn.position-fixed.bottom-0.end-0.rounded-circle {
+  width: 48px;
+  height: 48px;
+  z-index: 1050;
+}

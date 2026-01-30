@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakPeak.com</title>
+    <link rel="icon" href="../assets/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="detailsBack.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+        defer></script>
+    <script src="detailsBack.js" defer></script>
+    <script src="../theme-toggle.js" defer></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100" data-bs-theme="light">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+                    <img src="../assets/logo.png" alt="Logo Sneaker Store" class="rounded-circle">
+                    <span class="fw-bold text-uppercase">SneakPeak</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main class="flex-grow-1">
+        <div class="container py-4">
+            <div class="mb-3">
+                <a href="backOffice.html" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-arrow-left"></i> Torna al backoffice
+                </a>
+            </div>
+            <div id="statusMessage" class="alert d-none" role="alert"></div>
+            <div id="loadingSpinner" class="text-center my-3 d-none">
+                <div class="spinner-border" role="status" aria-hidden="true"></div>
+            </div>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-12 col-lg-6 d-flex justify-content-center">
+                    <div class="card h-100 shadow-sm rounded-4 d-inline-block">
+                        <div class="ratio ratio-4x3">
+                            <img id="productImage" src=""
+                                class="card-img-top w-100 h-100 rounded-top-4 object-fit-cover" alt="Product image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" id="productName">Product name</h5>
+                            <p class="card-text" id="productDescription">Product description</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item py-1 small"><strong>ID:</strong> <span id="productId"></span>
+                                </li>
+                                <li class="list-group-item py-1 small"><strong>Brand:</strong> <span
+                                        id="productBrand"></span></li>
+                                <li class="list-group-item py-1 small"><strong>ImageUrl:</strong> <span
+                                        id="productImageUrl"></span></li>
+                                <li class="list-group-item py-1 small"><strong>Price:</strong> € <span
+                                        id="productPrice"></span></li>
+                                <li class="list-group-item py-1 small"><strong>UserId:</strong> <span
+                                        id="productUserId"></span></li>
+                                <li class="list-group-item py-1 small"><strong>CreatedAt:</strong> <span
+                                        id="productCreatedAt"></span></li>
+                                <li class="list-group-item py-1 small"><strong>UpdatedAt:</strong> <span
+                                        id="productUpdatedAt"></span></li>
+                                <li class="list-group-item py-1 small"><strong>__v:</strong> <span id="productV"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 d-flex">
+                    <div class="w-100 d-flex flex-column">
+                        <h1 class="text-center mb-4">Vuoi modificare il prodotto?</h1>
+                        <form id="productForm" class="d-flex flex-column flex-grow-1">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <input type="text" class="form-control" id="description">
+                            </div>
+                            <div class="mb-3">
+                                <label for="brand" class="form-label">Brand</label>
+                                <input type="text" class="form-control" id="brand">
+                            </div>
+                            <div class="mb-3">
+                                <label for="imageUrl" class="form-label">ImgUrl</label>
+                                <input type="text" class="form-control" id="imageUrl">
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Price</label>
+                                <input type="number" class="form-control" id="price">
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3" id="apply">Apply</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="bg-body-tertiary border-top">
+            <div class="container py-4">
+                <div class="row gy-3 align-items-center">
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="../assets/logo.png" alt="Logo Sneaker Store" class="rounded-circle">
+                            <span class="fw-bold text-uppercase">SneakPeak</span>
+                        </div>
+                        <p class="text-muted small mt-2 mb-0">Fake e-commerce project for training purposes.</p>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex gap-3 justify-content-md-end">
+                        <a class="text-decoration-none text-muted" href="../e-commerce.html">Shop</a>
+                        <a class="text-decoration-none text-muted" href="backOffice.html">Backoffice</a>
+                    </div>
+                </div>
+                <div class="text-muted small mt-3">© 2026 SneakPeak</div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="themeToggle" type="button"
+        class="btn btn-dark position-fixed bottom-0 end-0 m-3 d-inline-flex align-items-center justify-content-center rounded-circle shadow"
+        aria-label="Switch to dark mode">
+        <i class="bi bi-sun-fill"></i>
+    </button>
+</body>
+
+</html>
