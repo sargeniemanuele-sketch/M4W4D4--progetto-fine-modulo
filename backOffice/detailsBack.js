@@ -1,7 +1,7 @@
 // Dati API
 const apiUrl = "https://striveschool-api.herokuapp.com/api/product"
 const token =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTc5MWNjMWY1Y2I1ZDAwMTU0ZjQzNTIiLCJpYXQiOjE3NzEyNjUyMTMsImV4cCI6MTc3MjQ3NDgxM30.jz2D2joNamCjWuqPCocVjkklmuorocEP0_5vFZGALH0"
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTc5MWNjMWY1Y2I1ZDAwMTU0ZjQzNTIiLCJpYXQiOjE3NzM3Mzc5NTIsImV4cCI6MTc3NDk0NzU1Mn0.sk5aKmJXdE4sfOW0waXdBXrsr_xwjZabpCy5RAS_x44"
 const headers = {
     "Authorization": token,
     "Content-Type": "application/json"
